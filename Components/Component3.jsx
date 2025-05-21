@@ -16,16 +16,17 @@ const Component3 = () => {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center', 
-    backgroundColor: '#e0e0e0', 
-    padding: 20, 
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    backgroundColor:'lightgray',
+    padding:100
+    
   },
   box: {
     borderRadius: 10, 
     backgroundColor: '#ffffff',
-    padding: 25,
+    padding: 40,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
