@@ -1,11 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Component1 from './Components/Component1';
+
+import Component2 from './Components/Component2';
+import Component3 from './Components/Component3';
 
 export default function App() {
   return (
     <View>
-      <Component1/>
+     <Component3/>
     </View>
   );
 }

@@ -1,11 +1,14 @@
 import {useState} from 'react'
-import { Text ,Button,View,TextInput,StyleSheet,FlatList} from 'react-native'
+import { Text ,Button,View,TextInput,StyleSheet,FlatList,TouchableOpacity} from 'react-native'
 const Component1 = () => {
     const[task,setTask]=useState('');
     const[taskArray,setTaskArray]=useState([]);
     function addTask(){
        setTaskArray([...taskArray,{ key: Date.now().toString(), text: task }]);
        setTask('');
+    }
+    function deleteTask(key){
+        setTaskArray(taskArray.filter(item=>item.key!==key))
     }
   return (
     <>
@@ -21,8 +24,10 @@ const Component1 = () => {
     <FlatList
         data={taskArray}
         renderItem={({ item }) => (
-         
+         <TouchableOpacity onPress={()=>deleteTask(item.key)}>
             <Text style={styles.task}>{item.text}</Text>
+        
+            </TouchableOpacity>
         )}
       />
     </View>
@@ -31,7 +36,8 @@ const Component1 = () => {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display:'flex',
+    height:300,
     backgroundColor: '#f2f2f2',
     alignItems: 'center',
     padding: 20,
@@ -39,6 +45,7 @@ const styles = StyleSheet.create({
   forms: {
     width: '100%',
     padding: 10,
+    marginTop:29,
     marginBottom: 12,
     borderWidth: 1,
     borderColor: '#ccc',
