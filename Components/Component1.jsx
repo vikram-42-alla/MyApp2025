@@ -1,5 +1,6 @@
 import {useState} from 'react'
-import { Text ,Button,View,TextInput,StyleSheet,FlatList,TouchableOpacity} from 'react-native'
+import { Text ,Button,View,TextInput,StyleSheet,FlatList,TouchableOpacity,ScrollView} from 'react-native'
+
 const Component1 = () => {
     const[task,setTask]=useState('');
     const[taskArray,setTaskArray]=useState([]);
@@ -21,6 +22,7 @@ const Component1 = () => {
     onChangeText={setTask}
     />
     <Button title='Add Task' onPress={addTask}></Button>
+    <ScrollView>
     <FlatList
         data={taskArray}
         renderItem={({ item }) => (
@@ -30,6 +32,7 @@ const Component1 = () => {
             </TouchableOpacity>
         )}
       />
+      </ScrollView>
       
     </View>
     </>

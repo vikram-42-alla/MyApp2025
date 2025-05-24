@@ -1,5 +1,5 @@
 import React from "react";
-import {View,Button, Alert,TouchableOpacity} from 'react-native';
+import {View,Button, Alert,TouchableOpacity,StatusBar} from 'react-native';
 
 export default function Screen1({navigation}){
     return(
@@ -7,7 +7,7 @@ export default function Screen1({navigation}){
             
             <Button title='Profile Card App'  onPress={()=>navigation.navigate("Profile Card")}/>
             <Button  title="Todo App" onPress={()=>navigation.navigate("Todo App")}/>
-             
+            <Button title="Json" onPress={()=>navigation.navigate("Json")}/>
       
         </View>
     )
