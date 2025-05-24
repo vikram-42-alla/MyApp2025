@@ -30,6 +30,7 @@ const Component1 = () => {
             </TouchableOpacity>
         )}
       />
+      
     </View>
     </>
   )
